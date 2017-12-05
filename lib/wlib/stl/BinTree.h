@@ -61,10 +61,10 @@ class Tree {
          * @param childVal Value to insert
          * @return Index of inserted element in the tree.
          */
-        size_t insertChildAt(size_t parentIndex, T childVal) {
-            size_t childIndex = 2*parentIndex + 1;
-            size_t len = m_tree.size();
-            size_t indexCount = 0;
+        unsigned short insertChildAt(unsigned short parentIndex, T childVal) {
+            unsigned short childIndex = 2*parentIndex + 1;
+            unsigned short len = m_tree.size();
+            unsigned short indexCount = 0;
 
             ArrayList<float>::iterator iter = m_tree.begin();
 
@@ -103,7 +103,7 @@ class Tree {
          * @note The right child is the child that is inserted first. 
          * If there is only one child, then it is the left child.
          */
-        size_t getRightChildIndex(size_t parentIndex){
+        unsigned short getRightChildIndex(unsigned short parentIndex){
             return 2*parentIndex + 2;
         }
         
@@ -115,7 +115,7 @@ class Tree {
          * @note The left child is the child that is inserted second.
          * If there is only one child, then it is the left child.
          */
-        size_t getLeftChildIndex(size_t parentIndex){
+        unsigned short getLeftChildIndex(unsigned short parentIndex){
             return 2*parentIndex + 1;
         }
 
@@ -149,7 +149,7 @@ class Tree {
          * @param childIndex index of child node
          * @return Index of the parent with child at @p childIndex
          */
-        size_t getParentIndex(size_t childIndex){
+        unsigned short getParentIndex(unsigned short childIndex){
             return ((childIndex-1)/2);
         }
         

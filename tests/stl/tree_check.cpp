@@ -15,7 +15,7 @@ TEST(tree_test, test_insert_and_delete){
 
     tree.insertChildAt(0, 1);
     tree.insertChildAt(0, 2);
-    ASSERT_EQ(tree.getNumLeaves(), (size_t)3);
+    ASSERT_EQ(tree.getNumLeaves(), 3);
     ASSERT_EQ(tree.getVal(1), 2);
     ASSERT_EQ(tree.getVal(2), 1);
 
@@ -29,15 +29,15 @@ TEST(tree_test, test_insert_and_delete){
     rightChild = tree.getRightChildVal(1);
     ASSERT_EQ(leftChild, 3);
 
-    size_t leftChildIndex = tree.getLeftChildIndex(1);
-    size_t rightChildIndex = tree.getRightChildIndex(1);
-    size_t parentIndex1 = tree.getParentIndex(leftChildIndex);
-    size_t parentIndex2 = tree.getParentIndex(rightChildIndex);
+    unsigned short leftChildIndex = tree.getLeftChildIndex(1);
+    unsigned short rightChildIndex = tree.getRightChildIndex(1);
+    unsigned short parentIndex1 = tree.getParentIndex(leftChildIndex);
+    unsigned short parentIndex2 = tree.getParentIndex(rightChildIndex);
     ASSERT_EQ(parentIndex1, parentIndex2);
-    ASSERT_EQ(parentIndex1, (size_t)1);
+    ASSERT_EQ(parentIndex1, (unsigned short)1);
 
-    ASSERT_EQ(tree.getNumLeaves(), (size_t)4);
+    ASSERT_EQ(tree.getNumLeaves(), (unsigned short)4);
 
     tree.clear();
-    ASSERT_EQ(tree.getNumLeaves(), (size_t)0);
+    ASSERT_EQ(tree.getNumLeaves(), (unsigned short)0);
 }
